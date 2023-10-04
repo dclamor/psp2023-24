@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+    if (argc < 4) {
+        printf("Uso: %s <operación> <operando1> <operando2>\n", argv[0]);
+        return 1;
+    }
+
+    char *operacion = argv[1];
+    float operando1 = atof(argv[2]);
+    float operando2 = atof(argv[3]);
+
+    if (operacion[0] == 's' && operacion[1] == 'u' && operacion[2] == 'm' && operacion[3] == 'a') {
+        printf("Resultado: %.2f\n", operando1 + operando2);
+    } else if (operacion[0] == 'r' && operacion[1] == 'e' && operacion[2] == 's' && operacion[3] == 't' && operacion[4] == 'a') {
+        printf("Resultado: %.2f\n", operando1 - operando2);
+    } else if (operacion[0] == 'm' && operacion[1] == 'u' && operacion[2] == 'l' && operacion[3] == 't' && operacion[4] == 'i' && operacion[5] == 'p' && operacion[6] == 'l' && operacion[7] == 'i' && operacion[8] == 'c' && operacion[9] == 'a' && operacion[10] == 'c' && operacion[11] == 'i' && operacion[12] == 'o' && operacion[13] == 'n') {
+        printf("Resultado: %.2f\n", operando1 * operando2);
+    } else if (operacion[0] == 'd' && operacion[1] == 'i' && operacion[2] == 'v' && operacion[3] == 'i' && operacion[4] == 's' && operacion[5] == 'i' && operacion[6] == 'o' && operacion[7] == 'n') {
+        if (operando2 == 0) {
+            printf("Error: No se puede dividir por cero.\n");
+        } else {
+            printf("Resultado: %.2f\n", operando1 / operando2);
+        }
+    } else {
+        printf("Operación no válida. Las operaciones válidas son: suma, resta, multiplicacion, division\n");
+    }
+
+    return 0;
+}
+
+
+
+//usando strcomp
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {    
+    if (argc < 4) {
+        printf("Uso: %s <operación> <operando1> <operando2>\n", argv[0]);
+        return 1;
+    }
+
+    char *operacion = argv[1];
+    float operando1 = atof(argv[2]);
+    float operando2 = atof(argv[3]);
+
+    
+    if (strcmp(operacion, "suma") == 0) {
+        printf("Resultado: %.2f\n", operando1 + operando2);
+    } else if (strcmp(operacion, "resta") == 0) {
+        printf("Resultado: %.2f\n", operando1 - operando2);
+    } else if (strcmp(operacion, "multiplicacion") == 0) {
+        printf("Resultado: %.2f\n", operando1 * operando2);
+    } else if (strcmp(operacion, "division") == 0) {
+        
+        if (operando2 == 0) {
+            printf("Error: No se puede dividir por cero.\n");
+        } else {
+            printf("Resultado: %.2f\n", operando1 / operando2);
+        }
+    } else {
+        printf("Operación no válida. Las operaciones válidas son: suma, resta, multiplicacion, division\n");
+    }
+
+    return 0;
+}
